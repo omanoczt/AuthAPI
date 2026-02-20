@@ -74,4 +74,37 @@ export default class UserRepository {
 
     return resulter(true, noError, UserData);
   }
+
+  async setUsername(identifier: string, newUsername: string): Promise<Result<UserOutputDTO>> {
+    try {
+      const user = await UserModel.findOneAndUpdate(
+        {
+          $or: [
+            {id: identifier},
+            {username: identifier}
+          ]
+        },
+        {
+          username: newUsername
+        },
+        {
+          new: true
+        }
+      );
+
+      if(!user) {
+        return resulter(false, user_not_foundError);
+      }
+
+      const UserData: UserOutputDTO = user.toObject();
+
+      return resulter(true, noError, UserData);
+    } catch (error: any) {
+      if(error.code === 11000) {
+        return resulter(false, user_existsError);
+      }
+
+      return resulter(false, unknownError);
+    }
+  }
 }
