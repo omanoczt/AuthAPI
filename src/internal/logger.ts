@@ -19,5 +19,9 @@ export default {
   database: {
     ok: (log: string) => console.log(`[${getDateTime()}] ${chalk.blue('DATABASE')} ${log}`),
     fail: (log: string) => console.log(`[${getDateTime()}] ${chalk.red('DATABASE')} ${log}`)
+  },
+  redis: {
+    ok: (log: string) => console.log(`[${getDateTime()}] ${chalk.dim('REDIS')} ${log}`),
+    fail: (log: string) => console.log(`[${getDateTime()}] ${chalk.red('REDIS')} ${log}`)
   }
 }
