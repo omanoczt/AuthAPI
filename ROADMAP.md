@@ -64,9 +64,8 @@ interface UserData {
 > ### GET `/user/:identifier`
 > - Retorna os dados de um usuário
 > - Recebe o `ID` ou `username` do usuário como parametro na URL
-> - Se nenhum `ID/username` for passado, retorna uma array com a lista de todos os usuários
 
-> ### PATCH `/user/:userID?`
+> ### PATCH `/user/:userID`
 > - Atualiza os dados de um usuário, e retorna um objeto com os dados atualizados
 > - Recebe um JSON com cada propriedade que precisa ser alterada
 > ```ts

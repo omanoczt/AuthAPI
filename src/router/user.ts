@@ -11,7 +11,7 @@ router.post('/', async (req: Request, res: Response)=>{
   return;
 });
 
-router.get('{/:identifier}', async (req: Request, res: Response)=>{
+router.get('/:identifier', async (req: Request, res: Response)=>{
   const userController = new UserController(req, res);
 
   await userController.get();
