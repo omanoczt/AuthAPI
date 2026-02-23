@@ -13,7 +13,7 @@ export default async (req: Request, res: Response) => {
 
   const userService = new UserService();
 
-  const userCreationResponse = await userService.get(identifier.toString());
+  const response = await userService.get(identifier.toString());
 
-  return res.status(202).json(userCreationResponse);
+  return res.status(202).json(response);
 }

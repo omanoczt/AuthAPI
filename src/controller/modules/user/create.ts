@@ -15,7 +15,7 @@ export default async (req: Request, res: Response) => {
 
   const userService = new UserService();
 
-  const userCreationResponse = await userService.create(userData);
+  const response = await userService.create(userData);
 
-  return res.status(202).json(userCreationResponse);
+  return res.status(202).json(response);
 }
