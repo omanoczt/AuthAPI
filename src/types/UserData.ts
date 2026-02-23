@@ -1,9 +1,3 @@
-export interface Application {
-  id: string;
-  name: string;
-  active: boolean;
-}
-
 export default interface UserData {
   id: string;
   username: string;

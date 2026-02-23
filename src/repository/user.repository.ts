@@ -48,7 +48,7 @@ export default class UserRepository {
     }
 
     const UserData: UserOutputDTO = user.toObject();
-
+    
     return resulter(true, noError, UserData);
   }
 
@@ -155,5 +155,4 @@ export default class UserRepository {
       return resulter(false, unknownError);
     }
   }
-
 }

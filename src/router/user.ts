@@ -20,6 +20,7 @@ router.get('/:identifier', async (req: Request, res: Response)=>{
 });
 
 router.patch('/:userid', async (req: Request, res: Response)=>{
+  
   const userController = new UserController(req, res);
 
   await userController.update();
