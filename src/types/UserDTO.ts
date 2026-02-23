@@ -7,6 +7,10 @@ export const UserInputSchema = z.object({
   password: z.string().min(Limit.MIN_PASSWORD_LEN).max(Limit.MAX_PASSWORD_LEN),
 });
 
+export const UserUpdateSchema = UserInputSchema.partial();
+
+export type UserUpdateDTO = z.infer<typeof UserUpdateSchema>;
+
 export type UserInputDTO = z.infer<typeof UserInputSchema>;
 
 export type UserOutputDTO = Omit<UserData, 'password'>;

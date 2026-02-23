@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import create from "./modules/user/create";
 import get from "./modules/user/get";
+import update from "./modules/user/update";
 
 export default class UserController {
   private req: Request;
@@ -18,6 +19,12 @@ export default class UserController {
   async get(): Promise<void> {
     const { req, res } = this;
     await get(req, res);
+    return;
+  }
+
+  async update(): Promise<void> {
+    const { req, res } = this;
+    await update(req, res);
     return;
   }
 }

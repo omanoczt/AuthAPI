@@ -19,8 +19,12 @@ router.get('{/:identifier}', async (req: Request, res: Response)=>{
   return;
 });
 
-router.put('/:identifier', (req: Request, res: Response)=>{
-  // Atualiza os dados de um usuário
+router.patch('/:userid', async (req: Request, res: Response)=>{
+  const userController = new UserController(req, res);
+
+  await userController.update();
+
+  return;
 })
 
 router.delete('/:identifier', (req: Request, res: Response)=>{
